@@ -12,12 +12,13 @@
 main()
 {
 	long nc;
-	int c;
 
-
-	nc = 0;
+	/*
 	while ( (c = getchar()) != EOF)
 		++nc;
+	*/
+	for (nc = 0; (getchar() != EOF); nc++)
+		;
 
 	printf("\nnc = %ld\n", nc);
 }
