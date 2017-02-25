@@ -9,13 +9,13 @@
 #include <stdio.h>
 
 /* opy input to output. 2nd version */
-main()
-{
-	int c;
-
-	c = getchar();
-
-	while((c=getchar()) != EOF) {
-		putchar(c);
-	}
-}
+//main()
+//{
+//	int c;
+//
+//	c = getchar();
+//
+//	while((c=getchar()) != EOF) {
+//		putchar(c);
+//	}
+//}
