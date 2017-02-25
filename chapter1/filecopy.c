@@ -8,15 +8,14 @@
 
 #include <stdio.h>
 
-/* opy input to output. 1st version */
+/* opy input to output. 2nd version */
 main()
 {
 	int c;
 
 	c = getchar();
 
-	while (c != EOF) {
+	while((c=getchar()) != EOF) {
 		putchar(c);
-		c = getchar();
 	}
 }
