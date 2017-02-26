@@ -50,6 +50,18 @@ void strcat(char s[], char t[])
 		;
 }
 
+/* bitcount: count 1 bits in x*/
+int bitcount(unsigned x)
+{
+	int b;
+
+	for(b = 0; x!= 0; x >>= 1)
+		if (x & 01)
+			++b;
+
+	return b;
+}
+
 main()
 {
 	char c = '0';
@@ -66,6 +78,8 @@ main()
 
 	char temp1[] = "123";
 	char temp2[] = "456";
+
+	int x = 2;
 
 
 	printf("si = %3d\n", si);
@@ -107,6 +121,11 @@ main()
 
 	printf("temp1: %s\n", temp1);
 
+	printf("1&2 = %d\n", 1&2);
+	printf("1&&2 = %d\n", 1&&2);
+
+	printf("x = %d\n", x);
+	printf("Number of 1 bits in x: %d", bitcount(x));
 
 	return 0;
 }
