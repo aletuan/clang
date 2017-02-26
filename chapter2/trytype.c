@@ -37,6 +37,19 @@ void squeeze(char s[], int c)
 	s[j] = '\0';
 }
 
+/* strcat: concatenate t to the end of s; s must be big enough */
+void strcat(char s[], char t[])
+{
+	int i, j;
+
+	i = j = 0;
+	while (s[i] != '\0')    /* find end of s */
+		i++;
+
+	while ((s[i++] = t[j++]) != '\0')    /* copy t */
+		;
+}
+
 main()
 {
 	char c = '0';
@@ -50,6 +63,9 @@ main()
 	unsigned char ui = 200;
 
 	char temp[] = "1234c";
+
+	char temp1[] = "123";
+	char temp2[] = "456";
 
 
 	printf("si = %3d\n", si);
@@ -83,6 +99,14 @@ main()
 	squeeze(temp, 'c');
 
 	printf("temp: %s\n", temp);
+
+	printf("temp1: %s\n", temp1);
+	printf("temp2: %s\n", temp2);
+
+	strcat(temp1, temp2);
+
+	printf("temp1: %s\n", temp1);
+
 
 	return 0;
 }
