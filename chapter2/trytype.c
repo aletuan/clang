@@ -25,6 +25,18 @@ int atoi(char s[])
 	return n;
 }
 
+/* squeeuze: delete all c from s */
+void squeeze(char s[], int c)
+{
+	int i,j;
+
+	for(i = j = 0; s[i] != '\0'; i++)
+		if (s[i] != c)
+			s[j++] = s[i];
+
+	s[j] = '\0';
+}
+
 main()
 {
 	char c = '0';
@@ -37,7 +49,7 @@ main()
 	signed char si = 200;
 	unsigned char ui = 200;
 
-	char temp[] = "1234a";
+	char temp[] = "1234c";
 
 
 	printf("si = %3d\n", si);
@@ -65,6 +77,12 @@ main()
 
 	for(i = 0; i < 20; ++i)
 		printf("%d ", rand());
+
+	printf("\ntemp: %s\n", temp);
+
+	squeeze(temp, 'c');
+
+	printf("temp: %s\n", temp);
 
 	return 0;
 }
