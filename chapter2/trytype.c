@@ -62,6 +62,19 @@ int bitcount(unsigned x)
 	return b;
 }
 
+/* trim: remove trailig blanks, tabs, newlines */
+int trim(char s[])
+{
+	int n;
+
+	for(n = strlen(s)-1; n >= 0; --n)
+		if (s[n] != ' ' && s[n] != '\t' && s[n] != '\n')
+			break;
+
+	s[n+1] = '\0';
+	return n;
+}
+
 main()
 {
 	char c = '0';
@@ -125,7 +138,15 @@ main()
 	printf("1&&2 = %d\n", 1&&2);
 
 	printf("x = %d\n", x);
-	printf("Number of 1 bits in x: %d", bitcount(x));
+	printf("Number of 1 bits in x: %d\n", bitcount(x));
+
+	printf("Length of string temp1: %d\n",strlen(temp1));
+
+	char test[] = "abc 	\n";
+	printf("test :%s|\n", test);
+
+	trim(test);
+	printf("test :%s|\n", test);
 
 	return 0;
 }
