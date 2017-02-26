@@ -7,6 +7,7 @@
 
 
 #include <stdio.h>
+#include <ctype.h>
 
 #define VTAB '\xb'     /* ASCI vertical tab */
 #define BELL '\x7'     /* ASCI bell characters */
@@ -55,6 +56,15 @@ main()
 	printf("OTHER is %d\n", OTHER);
 
 	printf("Result = %d\n", atoi(temp));
+
+	printf("Is digit %d\n", isdigit(c));
+
+	c = 'a';
+
+	printf("Is digit %d\n", isdigit(c));
+
+	for(i = 0; i < 20; ++i)
+		printf("%d ", rand());
 
 	return 0;
 }
