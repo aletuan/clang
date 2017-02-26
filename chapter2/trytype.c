@@ -13,17 +13,30 @@
 
 int getlen(char s[]);
 
+int atoi(char s[])
+{
+	int i, n;
+
+	n = 0;
+	for (i = 0; s[i] >= '0' && s[i] <= '9'; ++i)
+		n = 10 * n + (s[i] - '0');
+
+	return n;
+}
+
 main()
 {
 	char c = '0';
 	int i = 0x1f;
 	float f = 100.0F;
-	enum boolean { NO, YES };
+	enum boolean { NO, YES, OTHER = 100 };
 
 	char cx = '\x30';
 
 	signed char si = 200;
 	unsigned char ui = 200;
+
+	char temp[] = "1234a";
 
 
 	printf("si = %3d\n", si);
@@ -39,6 +52,9 @@ main()
 
 	printf("NO is %d\n",NO);
 	printf("YES is %d\n",YES);
+	printf("OTHER is %d\n", OTHER);
+
+	printf("Result = %d\n", atoi(temp));
 
 	return 0;
 }
